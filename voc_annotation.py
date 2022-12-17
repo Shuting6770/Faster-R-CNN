@@ -31,9 +31,9 @@ def load_image(path, set):
                 # img['annotations'].append(annotation)
                 object={}
                 if (annotation['category_token'] == 'fd69059b62a3469fbaef25340c0eab7f'):#car
-                    category = 1
+                    category = 0
                 elif (annotation['category_token'] == '1fa93b757fc74fb197cdd60001ad8abf'):#human
-                    category = 2
+                    category = 1
                 object['bbox']= annotation['bbox']
                 object['category'] = category
                 img['annotations'].append(object)
