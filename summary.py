@@ -9,7 +9,7 @@ from nets.frcnn import FasterRCNN
 
 if __name__ == "__main__":
     input_shape     = [600, 600]
-    num_classes     = 21
+    num_classes     = 3
     
     device  = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model   = FasterRCNN(num_classes, backbone = 'vgg').to(device)
