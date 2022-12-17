@@ -30,6 +30,7 @@ def load_image(path, set):
             if(annotation['sample_data_token'] == sample_data['token']):
                 # img['annotations'].append(annotation)
                 object={}
+                #注意category从0开始，例如20类就是0~19
                 if (annotation['category_token'] == 'fd69059b62a3469fbaef25340c0eab7f'):#car
                     category = 0
                 elif (annotation['category_token'] == '1fa93b757fc74fb197cdd60001ad8abf'):#human
