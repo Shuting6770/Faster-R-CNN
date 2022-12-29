@@ -225,7 +225,7 @@ class FRCNN(object):
             draw.text(text_origin, str(label,'UTF-8'), fill=(0, 0, 0), font=font)
             del draw
 
-        return image
+        return image, top_boxes, top_label, top_conf
 
     def get_FPS(self, image, test_interval):
         #---------------------------------------------------#
