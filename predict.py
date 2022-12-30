@@ -130,9 +130,7 @@ if __name__ == "__main__":
             if img_name.lower().endswith(('.bmp', '.dib', '.png', '.jpg', '.jpeg', '.pbm', '.pgm', '.ppm', '.tif', '.tiff')):
                 image_path  = os.path.join(dir_origin_path, img_name)
                 image       = Image.open(image_path)
-                r_image, box, label, score   = frcnn.detect_image(image)
-                print("box:", box)
-                print("label:",label)
+                r_image   = frcnn.detect_image(image)
                 if not os.path.exists(dir_save_path):
                     os.makedirs(dir_save_path)
                 r_image.save(os.path.join(dir_save_path, img_name.replace(".jpg", ".png")), quality=95, subsampling=0)
