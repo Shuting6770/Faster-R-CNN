@@ -217,8 +217,7 @@ if __name__ == "__main__":
     #----------------------------------------------------#
     #   获得图片路径和标签
     #----------------------------------------------------#
-    train_annotation_path_car = 'car_train.txt'
-    train_annotation_path_human = 'human_train.txt'
+    train_annotation_path    = '/content/gdrive/MyDrive/Models/labels/merge.txt'
     val_annotation_path     = 'val.txt'
     
     #----------------------------------------------------#
@@ -290,24 +289,11 @@ if __name__ == "__main__":
     #---------------------------#
     #   读取数据集对应的txt
     #---------------------------#
-    # with open(train_annotation_path, encoding='utf-8') as f:
-    #     train_lines = f.readlines()
+    with open(train_annotation_path, encoding='utf-8') as f:
+        train_lines = f.readlines()
     with open(val_annotation_path, encoding='utf-8') as f:
         val_lines   = f.readlines()
-    train_lines=[]
-    with open(train_annotation_path_car, encoding='utf-8') as f:
-        train_lines_car = f.readlines()
-    with open(train_annotation_path_human, encoding='utf-8') as f:
-        train_lines_human = f.readlines()
-    id_car = 0
-    id_human = 0
-    for index in range(800):
-        if index % 2 == 1:
-            train_lines.append(train_lines_car[id_car])
-            id_car+=1
-        else:
-            train_lines.append(train_lines_human[id_human])
-            id_human+=1
+
     num_train   = len(train_lines)
     num_val     = len(val_lines)
     
